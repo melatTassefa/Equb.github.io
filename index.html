@@ -1,0 +1,123 @@
+<html>
+    <head>
+        <link rel= "stylesheet" href="css/bootstrap.min.css">
+        <link rel= "stylesheet" href="equb.css">
+        <script src ="js/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
+        <div class="container-fluid" id="main">
+            <div class="row mb-5 ml-3" id="one">
+                <div class="col">
+                <h1 id="eqh">እቁብ</h1>
+                </div>
+            </div>
+            <div class ="row">
+            <div class="col-lg-5">
+
+                <div id="carouselExampleAutoplaying" class="carousel slide carousel-control-width:15%;" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="first1.jfif" class="d-block w-100" id= "ap" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="first2.jpg" class="d-block w-100" id= "ap" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="third.jpg" class="d-block w-100" id= "ap" alt="...">
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+                </div>
+                <div class="col-lg-5">
+                    <p id="eqp">
+                        እቁብን ስለመረጡ እናመሰግናለን!<br>
+                        ሙሉ ስሞን እና የሚጥሉትን የእቁብ መጠን ያስገቡ፡፡ ይህ እቁብ የፈለጉትን ያህል ሰዎች ያስተናግዳል፡፡
+                        አባላቱን አስገብተው ሲጨርሱ፡ "እጣ አውጣ" የሚለውን በመጫን የሳምንቱን አሸናፊ ማወቅ ይችላሉ፡፡  
+                        </p>
+                </div>
+                </div>
+            <div class="container" >
+
+            </div>
+            <div class="row">
+                <div class = "col-lg-5">
+                    <form id="nfor">
+                        <div class="mb-3 mt-3">
+                            <label for="exampleFormControlInput1" class="form-label">ሙሉ ስም</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="ሙሉ ስም" style="width: 400px">
+                        </div>
+                        <div class="mb-3 ml-5">
+                            <label for="exampleFormControlTextarea1" class="form-label">የገንዘብ መጠን</label>
+                            <input type="text" class="form-control" id="exampleFormControlTextarea1" placeholder="ገንዘብ" style="width: 400px">
+                        </div>
+                        <div>
+                        <button type="button" id="btn" >አስገባ</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-7 append1">
+                    <table class="table table-bordered mt-3" border ="2px" id="tb">
+                        <thead id="row1">
+                            <th>
+                                አባላት
+                            </th>
+                            <th>
+                                ገንዘብ
+                            </th>
+                        </thead>
+                    </table>
+                    <button type="button" id = "btn2">እጣ አውጣ</button>
+                </div>
+            </div>
+            <div id="generatee">
+
+            </div>
+        </div>
+        <script>
+            const users = [];
+            const amounts = [];
+            let table = document.getElementById('tb');
+            let eForm = document.getElementById('nfor');
+            document.getElementById('btn').addEventListener('click', function() {
+                let row = table.insertRow();
+                let nameCell = row.insertCell();
+                let emailCell = row.insertCell();
+                let userd = document.getElementById('exampleFormControlInput1').value;
+                let userm = document.getElementById('exampleFormControlTextarea1').value;
+                users.push(userd);
+                amounts.push(userm);
+                for (let i=0;i<users.length;i++){
+                nameCell.textContent = users[i];
+                emailCell.textContent = amounts[i];
+                }
+                eForm.reset();
+                });
+                document.getElementById('btn2').addEventListener('click', function() {
+                let winner = '';
+                let num = Math.floor(Math.random() * users.length);
+                for(let i=0; i< users.length; i++){
+                    if(num == users.indexOf(users[i])){
+                        winner = users[i];
+                    }
+                }
+                let sum=0;
+                for(let i=0; i< amounts.length; i++){
+                sum = parseInt(sum) + parseInt(amounts[i]);  
+                }
+                let h1_element = document.createElement('h1');
+                h1_element.textContent = "የዚ ሳምንት አሸናፊ፡ " + winner + " ነው፡፡ ገንዘቡም፡ " + sum + " ነው፡፡";
+                h1_element.style.fontSize='24px';
+                let parent_div = document.getElementById("generatee");
+                parent_div.appendChild(h1_element);
+            })
+  </script>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+#main{
+    background-color: #152104;
+    height: auto;
+    width: 100%;
+}
+h1,p,label{
+    color: white;
+    margin-left: 50px;
+}
+#eqh{
+    margin-top: 3;
+}
+#one{
+    background-color: #253a07;
+}
+button{
+    background-color: #253a07;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+#tb{
+    background-color: white;
+}
+#nfor{
+    margin-left: 50px;
+}
+img{
+    height: 200px;
+    width:100px;
+}
+#carouselExampleAutoplaying{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    
